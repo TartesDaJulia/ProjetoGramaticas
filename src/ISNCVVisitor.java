@@ -1,89 +1,48 @@
 import java.util.*;
+public class ISNCVVisitor extends  ISNBaseVisitor<String>{
 
-public class ISNCVVisitor extends  ISNBaseVisitor{
+    public List<String> data = new ArrayList<String>();
+    public List< List<String> >registers = new ArrayList< List<String>>();
 
-    @Override
-    public Object visitCv(ISNParser.CvContext ctx) {
-        return super.visitCv(ctx);
+
+    public ISNCVVisitor() {
     }
 
     @Override
-    public Object visitTable(ISNParser.TableContext ctx) {
-        return super.visitTable(ctx);
+    public String visitRegisters(ISNParser.RegistersContext ctx) {
+        for(ISNParser.RegisterContext reg: ctx.register())
+        {
+            visit(reg);
+        }
+        System.out.println("Vou imprimir a lista conseguida...\n");
+        for (int i = 0; i < registers.size(); i++) {
+            System.out.println(registers.get(i));
+        }
+        return null;
     }
 
     @Override
-    public Object visitPersonal(ISNParser.PersonalContext ctx) {
-        return super.visitPersonal(ctx);
+    public String visitRegister(ISNParser.RegisterContext ctx) {
+        if(ctx.user()!=null)
+        {
+            visit(ctx.user());
+        }
+        return null;
     }
 
     @Override
-    public Object visitProjects(ISNParser.ProjectsContext ctx) {
-        return super.visitProjects(ctx);
+    public String visitUser(ISNParser.UserContext ctx) {
+        String temp = "";
+        for (ISNParser.InfoContext inf: ctx.info()) {
+            data.add(visit(inf));
+        }
+        registers.add(new ArrayList<String>(data));
+        data.clear();
+        return null;
     }
 
     @Override
-    public Object visitNetworks(ISNParser.NetworksContext ctx) {
-        return super.visitNetworks(ctx);
-    }
-
-    @Override
-    public Object visitEditorialBoards(ISNParser.EditorialBoardsContext ctx) {
-        return super.visitEditorialBoards(ctx);
-    }
-
-    @Override
-    public Object visitScientificCommittee(ISNParser.ScientificCommitteeContext ctx) {
-        return super.visitScientificCommittee(ctx);
-    }
-
-    @Override
-    public Object visitOtherInfo(ISNParser.OtherInfoContext ctx) {
-        return super.visitOtherInfo(ctx);
-    }
-
-    @Override
-    public Object visitThesis(ISNParser.ThesisContext ctx) {
-        return super.visitThesis(ctx);
-    }
-
-    @Override
-    public Object visitOrganizationOfEvents(ISNParser.OrganizationOfEventsContext ctx) {
-        return super.visitOrganizationOfEvents(ctx);
-    }
-
-    @Override
-    public Object visitScientificMeetings(ISNParser.ScientificMeetingsContext ctx) {
-        return super.visitScientificMeetings(ctx);
-    }
-
-    @Override
-    public Object visitPublications(ISNParser.PublicationsContext ctx) {
-        return super.visitPublications(ctx);
-    }
-
-    @Override
-    public Object visitListFormat(ISNParser.ListFormatContext ctx) {
-        return super.visitListFormat(ctx);
-    }
-
-    @Override
-    public Object visitDate(ISNParser.DateContext ctx) {
-        return super.visitDate(ctx);
-    }
-
-    @Override
-    public Object visitYear(ISNParser.YearContext ctx) {
-        return super.visitYear(ctx);
-    }
-
-    @Override
-    public Object visitMonth(ISNParser.MonthContext ctx) {
-        return super.visitMonth(ctx);
-    }
-
-    @Override
-    public Object visitDay(ISNParser.DayContext ctx) {
-        return super.visitDay(ctx);
+    public String visitInfo(ISNParser.InfoContext ctx) {
+        return ctx.getText();
     }
 }

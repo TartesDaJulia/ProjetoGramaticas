@@ -11,10 +11,10 @@ public class Main {
     public  static  void main (String[] args) throws IOException{
 
         ISNLexer lexer;
-        lexer = new ISNLexer(CharStreams.fromFileName("C:\\Users\\Henrique\\IdeaProjects\\ProjetoGramaticas\\testes\\1.txt"));
+        lexer = new ISNLexer(CharStreams.fromFileName("C:\\Users\\Henrique\\UMinho\\1Ano2019\\1Semestre\\Gramaticas\\ProjetoGramaticas\\testes\\1.txt"));
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         ISNParser parser = new ISNParser(tokens);
-        ParserRuleContext ctx = parser.cv();
+        ParserRuleContext ctx = parser.registers();
 
         ISNCVVisitor visitor = new ISNCVVisitor();
         visitor.visit(ctx);
