@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29d27f18-3c01-4feb-9f4e-8d39de81778a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ISN.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/ISN.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TinyC/ISNCVVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TinyC/ISNCVVisitor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TinyC/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TinyC/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ISNCVVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ISNCVVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +44,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/GitHubDesktop/app-2.3.1/resources/app/git/cmd/git.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -92,7 +94,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
